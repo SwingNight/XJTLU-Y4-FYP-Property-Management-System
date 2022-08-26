@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/user-received-items.css" rel="stylesheet">
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/user-sent-items.js"></script>
+    <script>
+  $.get(
+        url = "/getUserSession",
+        function (data) {
+            if(data==0){
+                window.location.href="userLogin.html";
+            }
+        },
+        type = "text"
+    )
+</script>
+</head>
+
+<body onload="loading()">
+    <header>
+        <div class="logo-section box">
+            <div class="logo"><img src="/img/big logo.png">
+                <h2 class="logo-title">Property Management System User</h2>
+                <p class="logo-text">User Version</p>
+                </a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="topnav">
+            <nav>
+                <ul id="starlist">
+                    <li><a href="user-index.html">Notices</a></li>
+                    <li><a href="user-query.html">Friends</a></li>
+                    <li class="menu"><a>Message</a>
+                        <ul class="sub">
+                            <li><a href="user-new-message.html">New</a></li>
+                            <li><a href="user-received-items.html">Inbox</a></li>
+                            <li><a href="user-sent-items.html">Sent Items</a></li>
+                        </ul>
+                        <span></span>
+                    </li>
+                    <li><a href="user-info.html">Personal Information</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="clear blank"></div>
+
+    <article>
+        <div class="my_msg_list_view">
+            <div class="my_msg_list_box">
+                <div class="my_msg_list_con">
+                    <div class="msg_list">
+                        <ul class="msg_list_ul" id="place">
+                            <!-- Messages Here -->
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div class="clear blank"></div>
+
+    <footer>
+        <div class="footer box">
+            <div class="endnav">
+                <p><b>Tips：</b></p>
+                <p>Here is a final year project: Property management system.</p>
+                <p>Designed and developed by Shen Wang.</p>
+                <p>Email: shen.wang18@student.xjtlu.edu.cn</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

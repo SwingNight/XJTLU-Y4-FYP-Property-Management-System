@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff</title>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/admin-style.css">
+  <link rel="stylesheet" type="text/css" href="/css/admin-user-manage.css">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/admin-user-manage.js"></script>
+  <script>
+  $.get(
+        url = "/getAdminSession",
+        function (data) {
+            if(data==0){
+                window.location.href="adminLogin.html";
+            }
+        },
+        type = "text"
+    )
+</script>
+</head>
+
+<body class="user-select" onload="loading()">
+  <section class="container-fluid">
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <h1 class="navbar-brand">Property Management System</h1>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <div class="row">
+      <aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
+        <!-- <ul class="nav nav-sidebar">
+          <li class="active"><a href="admin-index.html">Home Page</a></li>
+        </ul> -->
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-publish-news.html">Publish Notice</a></li>
+          <li><a href="admin-news.html">Notices</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-user-manage.html">User Management</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-new-message.html">New Message</a></li>
+          <li><a href="admin-received-items.html">Received Items</a></li>
+          <li><a href="admin-sent-items.html">Sent Items</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-info.html">Profile</a></li>
+        </ul>
+      </aside>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
+        <h1 class="frameTitle">User Management</h1>
+        <!-- Write Content Here -->
+        <div class="searchDiv">
+          <form class="search_form">
+            <input type="text" class="input_text" placeholder="Type user here" id="inputAcc">
+            <button class="input_sub" onclick="searchUser()" type="button">Search</button>
+          </form>
+        </div>
+
+        <table border="1">
+          <tr>
+            <th>Account</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Relation</th>
+            <th class="tEdit">Edit</th>
+          </tr>
+          <tbody id="tBody">
+          </tbody>
+
+        </table>
+        <div class="btninfos">
+          <button class="btninfo" id="modalBtn">Add User</button>
+        </div>
+
+
+
+        <div id="simpleModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Add User</h2>
+            </div>
+            <div class="modal-body">
+              <div class="btnDiv">
+                <input type="text" class="reset" placeholder="Account" id="acc">
+              </div>
+              <div class="btnDiv">
+                <input type="text" class="reset" placeholder="Password" id="pass">
+              </div>
+              <div>
+                <p id="tip" style="display: none;"></p>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button class="btnSave" onclick="savePassword()" id="saveBtn">Save</button>
+            </div>
+          </div>
+        </div>
+        <script>
+          var modal = document.getElementById("simpleModal");
+          var modalBtn = document.getElementById("modalBtn");
+          modalBtn.addEventListener("click", openModal);
+          window.addEventListener("click", outsideClick);
+          function openModal() {
+            modal.style.display = "block";
+          }
+          function outsideClick(e) {
+            if (e.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+          function closeModal() {
+            modal.style.display = "none";
+          }
+          function savePassword() {
+            var acc = document.getElementById("acc").value;
+            var pass = document.getElementById("pass").value;
+            var tip = document.getElementById("tip");
+            tip.style.display = "none";
+            var btnSubmit = document.getElementById("saveBtn");
+            btnSubmit.disabled = "true";
+
+            if (acc == "" || pass == "") {
+              tip.style.display = "";
+              tip.innerHTML = "Please fill in blanks.";
+              btnSubmit.removeAttribute("disabled");
+            } else {
+              $.post(
+                url = "/addUser",
+                {
+                  "acc": acc,
+                  "pass": pass
+                },
+                function (data) {
+                  if (data == 0) {
+                    btnSubmit.removeAttribute("disabled");
+                    closeModal();
+                    window.location.reload(true);
+                  } else if (data == 1) {
+                    tip.style.display = "";
+                    tip.innerHTML = "Please correct the account.";
+                    btnSubmit.removeAttribute("disabled");
+
+                  }
+                },
+                type = "text"
+              )
+
+            }
+            btnSubmit.removeAttribute("disabled");
+          }
+        </script>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

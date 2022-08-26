@@ -1,0 +1,78 @@
+.calendarDiv{
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 79rem;
+}
+
+/* Pop Window */
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0,0.5);
+}
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 15% auto;
+    width: 30%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0,0.2), 0 7px 20px 0 rgba(0, 0, 0,0.2);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+.modal-header h2,.modal-footer h3{
+    margin: 0;
+}
+.modal-header{
+    background-color: #1E90FF;
+    padding: 15px;
+    color: #fff;
+}
+
+.modal-body{
+    padding:10px 20px; 
+}
+.modal-footer{
+    color: #fff;
+    background-color: #1E90FF;
+    padding: 10px;
+    text-align: center;
+}
+@keyframes modalopen{
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.eventLabel{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+.eventInput{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 70%;
+}
+
+.btnSave {
+    width: 150px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    color: #1E90FF;
+    font-size: 17px;
+    margin: auto;
+}
+
+.btnSave:hover {
+    background: #adc0de;
+}

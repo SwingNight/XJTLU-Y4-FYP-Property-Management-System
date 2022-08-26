@@ -1,0 +1,134 @@
+div.body {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    width: 10rem;
+    font-size: 1rem;
+}
+
+.item {
+    width: 20rem;
+    height: 3.5rem;
+}
+
+input {
+    width: 20rem;
+    height: 2rem;
+    border-style: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-color: #1E90FF;
+    text-indent: 5px;
+}
+
+.btns {
+    margin: auto;
+    padding: 2rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+}
+.btn {
+    width: 250px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: #1E90FF;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    margin: auto;
+}
+
+.btn:hover {
+    background: #5599FF;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0,0.5);
+}
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 15% auto;
+    width: 30%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0,0.2), 0 7px 20px 0 rgba(0, 0, 0,0.2);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+.modal-header h2,.modal-footer h3{
+    margin: 0;
+}
+.modal-header{
+    background-color: #1E90FF;
+    padding: 15px;
+    color: #fff;
+}
+.closeBtn{
+    color: #fff;
+    float: right;
+    font-size: 30px;
+}
+.closeBtn:hover,.closeBtn:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-body{
+    padding:10px 20px; 
+    text-align: center;
+}
+.modal-footer{
+    color: #fff;
+    background-color: #1E90FF;
+    padding: 10px;
+    text-align: center;
+}
+@keyframes modalopen{
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.reset {
+    width: 20rem;
+    height: 2rem;
+    border-style: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    border-color: #1E90FF;
+    text-indent: 5px;  
+    margin: 1%;
+}
+
+.btnSave {
+    width: 200px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    color: #1E90FF;
+    font-size: 17px;
+    margin: auto;
+}
+
+.btnSave:hover {
+    background: #adc0de;
+}

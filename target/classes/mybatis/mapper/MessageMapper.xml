@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.MessageMapper">
+
+    <select id="getMessageList" resultType="Message">
+        select * from message;
+    </select>
+
+    <select id="getMessageListBySender" resultType="Message" parameterType="String">
+        select * from message where sender = #{sender};
+    </select>
+
+    <select id="getMessageListByReceiver" resultType="Message" parameterType="String">
+        select * from message where receiver = #{receiver};
+    </select>
+
+    <select id="getMessageById" resultType="Message" parameterType="int">
+        select * from message where id = #{id};
+    </select>
+
+    <insert id="addMessage" parameterType="Message">
+        insert into message (sender,receiver,subject,content,time) values (#{sender},#{receiver},#{subject},#{content},#{time})
+    </insert>
+
+</mapper>

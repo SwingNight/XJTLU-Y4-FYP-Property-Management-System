@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User</title>
+  <link href="/css/base.css" rel="stylesheet">
+  <link href="/css/user-new-message.css" rel="stylesheet">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <script src="/js/user-new-message.js"></script>
+  <script src="https://cdn.tiny.cloud/1/np7tihrwaxvo0re9t4fnfp9rv0bbs3a9jl36vk2vbvgodynh/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+  <script>
+  $.get(
+        url = "/getUserSession",
+        function (data) {
+            if(data==0){
+                window.location.href="userLogin.html";
+            }
+        },
+        type = "text"
+    )
+</script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-section box">
+      <div class="logo"><img src="/img/big logo.png">
+        <h2 class="logo-title">Property Management System User</h2>
+        <p class="logo-text">User Version</p>
+        </a>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="topnav">
+      <nav>
+        <ul id="starlist">
+          <li><a href="user-index.html">Notices</a></li>
+          <li><a href="user-query.html">Friends</a></li>
+          <li class="menu"><a>Message</a>
+            <ul class="sub">
+              <li><a href="user-new-message.html">New</a></li>
+              <li><a href="user-received-items.html">Inbox</a></li>
+              <li><a href="user-sent-items.html">Sent Items</a></li>
+            </ul>
+            <span></span>
+          </li>
+          <li><a href="user-info.html">Personal Information</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="clear blank"></div>
+
+  <article>
+    <div class="titleLabel">
+      <tr>
+        <td>Receiver:</td>
+        <td>
+          <input type="text" class="receiver" id="receiver">
+        </td>
+      </tr>
+    </div>
+    <div class="titleLabel">
+      <tr>
+        <td>Subject:&nbsp</td>
+        <td>
+          <input type="text" class="newsTitle" id="subject">
+        </td>
+      </tr>
+    </div>
+    <div class="editor">
+      <p class="feedback" id="feedback" style="display: none;"></p>
+      <textarea class="editor"></textarea>
+    </div>
+    <script>
+      tinymce.init({
+        selector: 'textarea',
+        plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+        menubar: 'file edit view format',
+        toolbar: 'undo redo | styleselect | bold italic',
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+      });
+    </script>
+    <div class="btninfos">
+      <button class="btninfo" id="submit" onclick="sendMessage()">Send</button>
+    </div>
+  </article>
+
+  <div class="clear blank"></div>
+
+  <footer>
+    <div class="footer box">
+      <div class="endnav">
+        <p><b>Tips：</b></p>
+        <p>Here is a final year project: Property management system.</p>
+        <p>Designed and developed by Shen Wang.</p>
+        <p>Email: shen.wang18@student.xjtlu.edu.cn</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

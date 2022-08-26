@@ -1,0 +1,173 @@
+.frameTitle {
+    margin-left: 5rem;
+    margin-top: 5rem;
+}
+
+table {
+    margin-left: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-right: 5rem;
+    width: 90%;
+}
+
+th{
+    width: 10%;
+    height: 5rem;
+    text-align: center;
+    background-color: #a7f2fe;
+}
+
+td{
+    width: 10%;
+    height: 5rem;
+    text-align: center;
+}
+
+.tEdit{
+    width: 20%;
+}
+
+.btninfos{
+    text-align: center;
+}
+.btninfo {
+    width: 250px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: #1E90FF;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    margin: auto;
+    text-align: center;
+}
+.btninfo:hover {
+    background: #5599FF;
+}
+
+
+/* Pop Window */
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0,0.5);
+}
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 15% auto;
+    width: 30%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0,0.2), 0 7px 20px 0 rgba(0, 0, 0,0.2);
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+.modal-header h2,.modal-footer h3{
+    margin: 0;
+}
+.modal-header{
+    background-color: #1E90FF;
+    padding: 15px;
+    color: #fff;
+}
+
+.modal-body{
+    padding:10px 20px; 
+}
+.modal-footer{
+    color: #fff;
+    background-color: #1E90FF;
+    padding: 10px;
+    text-align: center;
+}
+@keyframes modalopen{
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.reset {
+    width: 25rem;
+    height: 4rem;
+    border-style: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    border-color: #1E90FF;
+    text-indent: 5px;  
+    margin: 1%;
+
+}
+
+.btnDiv{
+    margin: 1rem;
+    text-align: center;
+}
+
+.btnSave {
+    width: 200px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    outline: none;
+    color: #1E90FF;
+    font-size: 17px;
+    margin: auto;
+}
+
+.btnSave:hover {
+    background: #adc0de;
+}
+
+.search_form{
+    width:602px;
+    height:42px;
+}
+
+
+.searchDiv{
+    margin-left: 5rem;
+    margin-top: 5rem;
+}
+/*左边输入框设置样式*/
+.input_text{
+    width:400px;
+    height: 40px;
+    border:1px solid #1E90FF;
+    /*清除掉默认的padding*/
+    padding:0px;
+
+    /*提示字首行缩进*/
+    text-indent: 10px;
+
+    /*去掉蓝色高亮框*/
+    outline: none;
+
+    /*用浮动解决内联元素错位及小间距的问题*/
+    float:left;
+}
+
+.input_sub{
+    width:100px;
+    height: 40px;
+    background: #1E90FF;
+
+    /*去掉submit按钮默认边框*/
+    border:0px;
+    /*改成右浮动也是可以的*/
+    float:left;
+    color:white;/*搜索的字体颜色为白色*/
+    cursor:pointer;/*鼠标变为小手*/
+}
+
+.input_sub:hover {
+    background: #adc0de;
+}

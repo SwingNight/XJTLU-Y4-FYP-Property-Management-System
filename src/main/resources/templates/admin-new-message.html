@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff</title>
+  <!-- ../static -->
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/admin-style.css">
+  <link rel="stylesheet" type="text/css" href="/css/admin-new-message.css">
+  <script src="/js/jquery-3.5.1.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/admin-new-message.js"></script>
+
+  <script src="https://cdn.tiny.cloud/1/np7tihrwaxvo0re9t4fnfp9rv0bbs3a9jl36vk2vbvgodynh/tinymce/5/tinymce.min.js"
+    referrerpolicy="origin"></script>
+  <script>
+  $.get(
+        url = "/getAdminSession",
+        function (data) {
+            if(data==0){
+                window.location.href="adminLogin.html";
+            }
+        },
+        type = "text"
+    )
+</script>
+</head>
+
+<body class="user-select">
+  <section class="container-fluid">
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <h1 class="navbar-brand">Property Management System</h1>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <div class="row">
+      <aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
+        <!-- <ul class="nav nav-sidebar">
+          <li class="active"><a href="admin-index.html">Home Page</a></li>
+        </ul> -->
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-publish-news.html">Publish Notice</a></li>
+          <li><a href="admin-news.html">Notices</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-user-manage.html">User Management</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-new-message.html">New Message</a></li>
+          <li><a href="admin-received-items.html">Received Items</a></li>
+          <li><a href="admin-sent-items.html">Sent Items</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="admin-info.html">Profile</a></li>
+        </ul>
+      </aside>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-lg-10 col-md-offset-2 main" id="main">
+        <h1 class="frameTitle">New Message</h1>
+        <!-- Write Content Here -->
+        <div class="titleLabel">
+          <tr>
+            <td>Receiver:</td>
+            <td>
+              <input type="text" class="receiver" id="receiver">
+            </td>
+          </tr>
+        </div>
+        <div class="titleLabel">
+          <tr>
+            <td>Subject:&nbsp</td>
+            <td>
+              <input type="text" class="newsTitle" id="subject">
+            </td>
+          </tr>
+        </div>
+        <div class="editor">
+          <p class="feedback" id="feedback" style="display: none;"></p>
+          <textarea class="editor"></textarea>
+        </div>
+        <script>
+          tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            menubar: 'file edit view format',
+            toolbar: 'undo redo | styleselect | bold italic',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+          });
+        </script>
+        <div class="btninfos">
+          <button class="btninfo" id="submit" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

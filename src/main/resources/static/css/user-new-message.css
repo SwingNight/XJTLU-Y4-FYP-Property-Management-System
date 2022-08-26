@@ -1,0 +1,72 @@
+.frameTitle {
+    margin-left: 3.5rem;
+    margin-top: 2rem;
+  }
+
+.titleLabel {
+    margin-left: 3.5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.feedback {
+    margin-bottom: 1rem;
+    color: red;
+}
+
+.newsCategory {
+    background-color: #fff;
+    height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.receiver {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 41%;
+    height: 2rem;
+    border-width: 1px;
+}
+
+.newsTitle {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 87%;
+    height: 2rem;
+    border-width: 1px;
+}
+
+
+.editor {
+    width: 90%;
+    padding-top: 2rem;
+    margin: auto;
+    text-align: center;
+}
+
+textarea {
+    height: 25rem;
+}
+
+.btninfos {
+    text-align: center;
+    margin: auto;
+    padding-top: 2rem;
+}
+.btninfo {   
+    width: 250px;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 3px;
+    background: #1E90FF;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 17px;
+    
+}
+
+.btninfo:hover {
+    background: #5599FF;
+}
